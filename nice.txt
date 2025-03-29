@@ -1,0 +1,24 @@
+const writeFile = (pathToFile, newPost) => {
+  try {
+    let existingData = []
+
+    // Check if file exists and read content
+    if (fs.existsSync(pathToFile)) {
+      const fileContent = fs.readFileSync(pathToFile, 'utf8')
+      existingData = fileContent ? JSON.parse(fileContent) : []
+    }
+
+    // Ensure the file contains an array before appending
+    if (!Array.isArray(existingData)) {
+      throw new Error('Invalid JSON format: Expected an array')
+    }
+
+    // Append the new post
+    existingData.push(newPost)
+
+    // Write back to file with proper formatting
+    fs.writeFileSync(pathToFile, JSON.stringify(existingData, null, 2), 'utf8')
+  } catch (error) {
+    console.error('Error writing file:', error)
+  }
+}

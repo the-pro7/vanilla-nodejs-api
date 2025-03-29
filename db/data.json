@@ -1,0 +1,40 @@
+[
+  {
+    "id": "73ca999b-b31a-4729-82be-b0b300b886c3",
+    "title": "Authur's Post!",
+    "content": "I love apples!",
+    "author": "Arthur King",
+    "createdAt": "2025-03-29T13:16:47.590Z",
+    "updatedAt": "2025-03-29T21:41:52.788Z"
+  },
+  {
+    "id": "11a37d6a-7e3a-4880-b6b6-821d4c582432",
+    "title": "O's post",
+    "content": "I love oranges!",
+    "author": "Oscar Navaldi",
+    "createdAt": "2025-03-29T13:19:41.933Z"
+  },
+  {
+    "id": "20e2addc-e329-45b0-86e1-20949e8580e7",
+    "title": "L's post",
+    "content": "I love cinamons!",
+    "author": "Naschal George",
+    "createdAt": "2025-03-29T13:27:05.165Z",
+    "updatedAt": "2025-03-29T21:40:18.049Z"
+  },
+  {
+    "id": "21c04244-f02d-4c03-9814-9deb91379f1e",
+    "title": "The comet show blog",
+    "content": "Some content",
+    "author": "Ethan Ankrah",
+    "createdAt": "2025-03-29T17:37:52.956Z"
+  },
+  {
+    "id": "3994a585-1635-413d-a8be-38b4d59531c1",
+    "title": "The UI/UX designer's guide",
+    "content": "The UI/UX designer's ultimate guide!",
+    "author": "Felix Opoku",
+    "createdAt": "2025-03-29T21:43:27.738Z",
+    "updatedAt": "2025-03-29T21:45:44.339Z"
+  }
+]
