@@ -10,7 +10,13 @@ const getAllPosts = async (req, res) => {
     res.writeHead(200, 'All posts returned', {
       'content-type': 'application/json'
     })
-    res.end(JSON.stringify({ message: 'Here are your posts', length: posts?.length, posts }))
+    res.end(
+      JSON.stringify({
+        message: 'Here are your posts',
+        length: posts?.length,
+        posts
+      })
+    )
   } catch (error) {
     logError(error)
   }
@@ -74,12 +80,30 @@ const createPost = async (req, res) => {
 const updatePost = async (req, res, id) => {
   try {
     const data = await getBodyData(req)
-    await Posts.findByIdAndUpdate(id, data)
+    const updatedPost = await Posts.findByIdAndUpdate(id, data)
     res.writeHead(200, 'Post updated', { 'content-type': 'application/json' })
-    res.end(JSON.stringify({ message: 'Post updated!' }))
+    res.end(JSON.stringify({ message: 'Post updated!', updatedPost }))
   } catch (error) {
     logError(error)
   }
 }
 
-export { getAllPosts, getSinglePost, createPost, updatePost }
+// @desc DELETE a post
+// @route DELETE /api/posts/:id
+
+const deletePost = async (req, res, id) => {
+  try {
+    const deletedPost = await Posts.findByIdAndDelete(id)
+
+    res.writeHead(200, 'Post deleted', { 'content-type': 'application/json' })
+    res.end(
+      JSON.stringify({ message: 'Post removed successfully!', deletedPost })
+    )
+  } catch (error) {
+    logError(error)
+    res.writeHead(500, "Server error", {"content-type": "application/json"})
+    res.end(JSON.stringify({message: "Looks like something went wrong on our end."}))
+  }
+}
+
+export { getAllPosts, getSinglePost, createPost, updatePost, deletePost }

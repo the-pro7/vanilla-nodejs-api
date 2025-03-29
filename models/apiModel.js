@@ -55,7 +55,7 @@ function create (data) {
   })
 }
 
-async function findByIdAndUpdate (id, newContent) {
+function findByIdAndUpdate (id, newContent) {
   return new Promise((resolve, reject) => {
     if (!id) reject('No id provided!')
 
@@ -82,4 +82,20 @@ async function findByIdAndUpdate (id, newContent) {
   })
 }
 
-export { findAll, findById, findByIdAndUpdate, create }
+function findByIdAndDelete (id) {
+  return new Promise((resolve, reject) => {
+    if (!id) reject('An id needs to be provided')
+
+    const postToDelete = posts.find(item => item.id === id)
+
+    if (!postToDelete) return reject('No post found to delete')
+
+    const updatedPosts = posts.filter(item => item.id !== id)
+
+    // Save posts without deleted posts.
+    writeFile(DB_PATH, updatedPosts)
+    resolve(postToDelete)
+  })
+}
+
+export { findAll, findById, findByIdAndUpdate, findByIdAndDelete, create }

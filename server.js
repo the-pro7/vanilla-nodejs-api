@@ -2,6 +2,7 @@ import http from 'http'
 import { log, logError } from './utils.js'
 import {
   createPost,
+  deletePost,
   getAllPosts,
   getSinglePost,
   updatePost
@@ -32,6 +33,12 @@ const server = http.createServer((req, res) => {
     else if (req.url.match(ID_REGEXP) && req.method === "PATCH") {
         const id = req.url.split("/")[3]
         updatePost(req, res, id)
+    }
+
+    // Delete post
+    else if (req.url.match(ID_REGEXP) && req.method === "DELETE") {
+      const id = req.url.split("/")[3]
+      deletePost(req, res, id)
     }
     else {
       res.writeHead(400, 'No routes found', {
