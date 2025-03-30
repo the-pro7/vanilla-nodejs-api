@@ -1,4 +1,4 @@
-import { log, readFile, writeFile } from '../utils.js'
+import { writeFile } from '../utils.js'
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const posts = require('../db/data.json') // must be done for .json files

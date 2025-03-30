@@ -30,17 +30,6 @@ const writeFile = (pathToFile, newContent) => {
   }
 }
 
-// Read file
-const readFile = pathToFile => {
-  return fs.readFile(pathToFile, 'utf-8', (error, data) => {
-    if (error) {
-      throw new Error('Failed to read file', error)
-    }
-
-    return JSON.parse(data)
-  })
-}
-
 // Get body data
 const getBodyData = req => {
   return new Promise((resolve, reject) => {
@@ -55,4 +44,4 @@ const getBodyData = req => {
   })
 }
 
-export { log, logError, writeFile, readFile, getBodyData }
+export { log, logError, writeFile, getBodyData }

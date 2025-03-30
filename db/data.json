@@ -1,13 +1,5 @@
 [
   {
-    "id": "73ca999b-b31a-4729-82be-b0b300b886c3",
-    "title": "Authur's Post!",
-    "content": "I love apples!",
-    "author": "Arthur King",
-    "createdAt": "2025-03-29T13:16:47.590Z",
-    "updatedAt": "2025-03-29T21:41:52.788Z"
-  },
-  {
     "id": "11a37d6a-7e3a-4880-b6b6-821d4c582432",
     "title": "O's post",
     "content": "I love oranges!",
